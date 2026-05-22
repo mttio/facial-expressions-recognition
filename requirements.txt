@@ -1,0 +1,13 @@
+numpy
+pandas
+scikit-learn
+scikit-image
+opencv-python
+torch
+torchvision
+matplotlib
+seaborn
+notebook
+tqdm
+datasets
+huggingface_hub
