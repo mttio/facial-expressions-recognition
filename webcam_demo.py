@@ -146,7 +146,7 @@ def main():
     device = torch.device("mps" if torch.backends.mps.is_available() else ("cuda" if torch.cuda.is_available() else "cpu"))
     print(f"-> Utilizzo dispositivo Deep Learning: {device}")
     
-    cnn_model = EmotionCNN()
+    cnn_model = EmotionCNN().to(device)
     cnn_model.load_state_dict(torch.load(cnn_file, map_location=device))
     cnn_model.eval()
     print("-> CNN caricata con successo.")
