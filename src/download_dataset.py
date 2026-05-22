@@ -2,7 +2,6 @@ import os
 import numpy as np
 from datasets import load_dataset
 from tqdm import tqdm
-from PIL import Image
 
 def main():
     print("Inizio scaricamento del dataset FER-2013 da Hugging Face...")
@@ -28,17 +27,7 @@ def main():
         
         # Iteriamo con tqdm per mostrare il progresso
         for item in tqdm(hf_split, desc=f"Processando {split}"):
-            # L'immagine è un oggetto PIL.Image. Lo convertiamo in array numpy in scala di grigi (L)
-            img = item["image"]
-            if img.mode != "L":
-                img = img.convert("L")
-            img_arr = np.array(img, dtype=np.uint8)
-            
-            # Controlliamo la dimensione
-            if img_arr.shape != (48, 48):
-                img = img.resize((48, 48), Image.Resampling.BILINEAR)
-                img_arr = np.array(img, dtype=np.uint8)
-                
+            img_arr = np.array(item["image"], dtype=np.uint8)
             images.append(img_arr)
             labels.append(item["emotion"])
             
