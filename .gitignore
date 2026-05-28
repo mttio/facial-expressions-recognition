@@ -36,3 +36,7 @@ models/*.pkl
 models/*.joblib
 .DS_Store
 data/
+bozza_presentazione_gamma.md
+project_documentation.md
+shared_understanding.md
+ubiquitous_language.md
