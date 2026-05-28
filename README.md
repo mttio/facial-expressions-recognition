@@ -35,11 +35,7 @@ riconoscimento_espressioni/
 │   └── 04_comparison_and_discussion.ipynb  # Report dettagliato e confronto quantitativo/qualitativo
 │
 ├── src/                           # Script di supporto e automazione
-│   ├── download_dataset.py        # Scaricamento automatico del dataset FER-2013 da Hugging Face
-│   ├── generate_notebook_01.py    # Generatore programmatico del notebook 1
-│   ├── generate_notebook_02.py    # Generatore programmatico del notebook 2
-│   ├── generate_notebook_03.py    # Generatore programmatico del notebook 3
-│   └── generate_notebook_04.py    # Generatore programmatico del notebook 4
+│   └── download_dataset.py        # Scaricamento automatico del dataset FER-2013 da Hugging Face
 │
 ├── project_documentation.md       # Documentazione tecnica approfondita del progetto
 ├── shared_understanding.md         # Obiettivi, requisiti e design di alto livello
@@ -93,11 +89,12 @@ source .venv/bin/activate
 pip install -r requirements.txt
 ```
 
-### 4. Scaricare programmaticamente il dataset FER-2013:
+### 4. Scaricare il dataset:
+Il dataset originale FER-2013 non è caricato su GitHub (la cartella `data/` è inserita nel file `.gitignore`). Per scaricarlo ed estrarlo automaticamente da Hugging Face, eseguire il seguente script:
 ```bash
 python src/download_dataset.py
 ```
-*Questo script scarica il dataset da Hugging Face e genera il file compresso `data/fer2013.npz` contenente gli split di train, validation e test.*
+*Questo script effettuerà il download e genererà il file compresso `data/fer2013.npz` contenente i dati di training, validation e test, pronti per essere utilizzati all'interno dei notebook e della demo.*
 
 ---
 

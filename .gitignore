@@ -31,8 +31,8 @@ ENV/
 */.ipynb_checkpoints/*
 
 # Project Specific
-data/
 models/*.pth
 models/*.pkl
 models/*.joblib
 .DS_Store
+data/
